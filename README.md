@@ -29,8 +29,6 @@ Key Features:
 
 🔘 Favorites: View a curated collection of cars that you've added to your favorites. Filter options allow you to organize cars by make, mileage, and rental cost on this dedicated page.
 
-🔘 Filtering: Use our user-friendly filter system to quickly find cars based on brand, rental price, and mileage. This streamlines the process of discovering the perfect car that aligns with your specific requirements.
-
 🔘 Add to Favorites: Save cars of interest to your favorites for thoughtful decision-making and easy ordering at a later time.
 
 🔘 Phone Orders: Contact us seamlessly through our website to place orders over the phone. Our team is readily available to assist and provide guidance whenever needed.
