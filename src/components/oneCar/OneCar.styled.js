@@ -51,6 +51,7 @@ export const ItemSubHeaderWrapper = styled.div`
 
   div {
     display: flex;
+    align-items: center;
   }
 
   svg {

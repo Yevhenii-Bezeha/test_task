@@ -25,7 +25,6 @@ export const ModalWrapper = styled.div`
   padding: 40px;
   border-radius: 20px;
   top: 40px;
-  // bottom: 40px;
 
   img {
     width: 290px;
@@ -66,6 +65,7 @@ export const ItemSubHeaderWrapper = styled.div`
 
   div {
     display: flex;
+    align-items: center;
   }
 
   svg {

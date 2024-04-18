@@ -6,11 +6,15 @@ import {
   StyledErrorMessage,
   StyledButton,
   StyledFieldComment,
+  CustomCalendarIcon,
+  CustomDatePickerWrapper,
 } from "./CustomForm.styled";
-import { Formik, Field } from "formik";
+import { Formik } from "formik";
 import * as Yup from "yup";
+import { SvgWrapper } from "../svgWrapper/SvgWrapper";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "./customDatePicker.css";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Required"),
@@ -25,6 +29,7 @@ const CustomDatePickerField = ({ name, value, onChange }) => {
       selected={value}
       onChange={(val) => onChange(name, val)}
       dateFormat="MM/dd/yyyy"
+      placeholderText="Booking date"
     />
   );
 };
@@ -62,15 +67,21 @@ export const CustomForm = () => {
             <StyledField type="email" name="email" placeholder="Email" />
             <StyledErrorMessage name="email" component="div" />
 
-            <StyledField name="bookingDate">
-              {() => (
-                <CustomDatePickerField
-                  name="bookingDate"
-                  value={values.bookingDate}
-                  onChange={setFieldValue}
-                />
-              )}
-            </StyledField>
+            <CustomDatePickerWrapper>
+              <StyledField name="bookingDate">
+                {() => (
+                  <CustomDatePickerField
+                    name="bookingDate"
+                    value={values.bookingDate}
+                    onChange={setFieldValue}
+                  />
+                )}
+              </StyledField>
+              <CustomCalendarIcon>
+                <SvgWrapper id="icon-calendar" />
+              </CustomCalendarIcon>
+            </CustomDatePickerWrapper>
+
             <StyledErrorMessage name="bookingDate" component="div" />
 
             <StyledFieldComment

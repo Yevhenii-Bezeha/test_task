@@ -27,6 +27,16 @@ export const StyledForm = styled(Form)`
   flex-direction: column;
 `;
 
+export const CustomDatePickerWrapper = styled.div`
+  position: relative;
+`;
+
+export const CustomCalendarIcon = styled.div`
+  position: absolute;
+  top: 18px;
+  right: 18px;
+`;
+
 export const StyledField = styled(Field)`
   margin-bottom: 14px;
   padding: 18px;

@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   CloseModalButton,
   ItemDescrModalP,
@@ -10,8 +10,9 @@ import {
   ItemPrice,
   ImgList,
 } from "./Modal.styled";
-import { SvgSymbols } from "../../images/svg/SvgSymbols";
 import { Tabs } from "../tabs/Tabs";
+import { SvgWrapper } from "../svgWrapper/SvgWrapper";
+import { ItemRating } from "../itemRating/ItemRating";
 
 const rootModal = document.querySelector("#modal");
 
@@ -39,29 +40,21 @@ export const Modal = ({ car, closeModal }) => {
 
   return ReactDOM.createPortal(
     <WrapperOverlay onClick={handleClickOut}>
-      <SvgSymbols />
       <ModalWrapper>
         <div>
           <ItemHeaderModalWrapper>
             <h1>{car.name}</h1>
             <CloseModalButton type="button" onClick={closeModal}>
-              <svg height={24}>
-                <use href="#icon-x" width={24} height={24} />
-              </svg>
+              <SvgWrapper id="icon-close" />
             </CloseModalButton>
           </ItemHeaderModalWrapper>
           <ItemSubHeaderWrapper>
+            <ItemRating
+              rating={car.rating}
+              reviewsCount={car.reviews.length}
+            ></ItemRating>
             <div>
-              <svg width={18} height={18}>
-                <use xlinkHref="#icon-normal" />
-              </svg>
-              <span>{car.rating}</span>
-              <span>({car.reviews.length} Reviews)</span>
-            </div>
-            <div>
-              <svg width={18} height={18}>
-                <use xlinkHref="#icon-normal" />
-              </svg>
+              <SvgWrapper id="icon-location" />
               <p>{car.location}</p>
             </div>
           </ItemSubHeaderWrapper>

@@ -17,9 +17,10 @@ import {
   addToFavorites,
   removeFromFavorites,
 } from "../../redux/favorites/favoritesSlice";
-import { SvgSymbols } from "../../images/svg/SvgSymbols";
 import { toast } from "react-toastify";
 import { Pill } from "../pill/Pill";
+import { SvgWrapper } from "../svgWrapper/SvgWrapper";
+import { ItemRating } from "./../itemRating/ItemRating";
 
 function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -54,7 +55,6 @@ export const OneCar = ({ car }) => {
 
   return (
     <CatalogItem key={car.id}>
-      <SvgSymbols />
       <img src={car.gallery[0]} alt="Car" crossOrigin="anonymous"></img>
       <ItemWrapper>
         <ItemHeaderWrapper>
@@ -69,29 +69,20 @@ export const OneCar = ({ car }) => {
               onClick={() => handleFavoriteClick(car)}
             >
               {isFavorite ? (
-                <svg width={24} height={24}>
-                  <use xlinkHref="#icon-active" />
-                </svg>
+                <SvgWrapper id="icon-heart-filled" />
               ) : (
-                <svg width={24} height={24}>
-                  <use xlinkHref="#icon-normal" />
-                </svg>
+                <SvgWrapper id="icon-heart" />
               )}
             </ChooseCarButton>
           </div>
         </ItemHeaderWrapper>
         <ItemSubHeaderWrapper>
+          <ItemRating
+            rating={car.rating}
+            reviewsCount={car.reviews.length}
+          ></ItemRating>
           <div>
-            <svg width={18} height={18}>
-              <use xlinkHref="#icon-normal" />
-            </svg>
-            <span>{car.rating}</span>
-            <span>({car.reviews.length} Reviews)</span>
-          </div>
-          <div>
-            <svg width={18} height={18}>
-              <use xlinkHref="#icon-normal" />
-            </svg>
+            <SvgWrapper id="icon-location" />
             <p>{car.location}</p>
           </div>
         </ItemSubHeaderWrapper>
