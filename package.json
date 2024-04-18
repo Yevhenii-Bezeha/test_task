@@ -1,8 +1,8 @@
 {
-  "name": "test-task-car-rent",
+  "name": "test-task",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yevhenii-bezeha.github.io/test_task/",
+  "homepage": "https://Yevhenii-Bezeha.github.io/test_task/",
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
     "@reduxjs/toolkit": "^1.9.7",
