@@ -53,6 +53,15 @@ export const OneCar = ({ car }) => {
     { key: "airConditioner", value: car.details.airConditioner },
   ];
 
+  const keyToText = {
+    adults: (value) => `${value} adults`,
+    children: (value) => `${value} children`,
+    beds: (value) => `${value} beds`,
+    engine: (value) => value,
+    transmission: (value) => value,
+    airConditioner: (value) => "AC",
+  };
+
   return (
     <CatalogItem key={car.id}>
       <img src={car.gallery[0]} alt="Car" crossOrigin="anonymous"></img>
@@ -89,30 +98,7 @@ export const OneCar = ({ car }) => {
         <ItemDescription>{car.description}</ItemDescription>
         <PillsWrapper>
           {pillData.map(({ key, value }) => {
-            let text = "";
-
-            switch (key) {
-              case "adults":
-                text = `${value} ${key}`;
-                break;
-              case "children":
-                text = `${value} ${key}`;
-                break;
-              case "beds":
-                text = `${value} ${key}`;
-                break;
-              case "engine":
-                text = value;
-                break;
-              case "transmission":
-                text = value;
-                break;
-              case "airConditioner":
-                text = "AC";
-                break;
-              default:
-                text = key;
-            }
+            let text = keyToText[key] ? keyToText[key](value) : key;
             return (
               <Pill key={key} icon={key} text={capitalizeFirstLetter(text)} />
             );

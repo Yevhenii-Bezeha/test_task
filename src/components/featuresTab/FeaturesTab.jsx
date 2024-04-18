@@ -23,35 +23,22 @@ export const FeaturesTab = ({ car }) => {
     { key: "airConditioner", value: car.details.airConditioner },
   ];
 
+  const keyToText = {
+    adults: (value) => `${value} adults`,
+    children: (value) => `${value} children`,
+    beds: (value) => `${value} beds`,
+    engine: (value) => value,
+    transmission: (value) => value,
+    airConditioner: (value) => "AC",
+  };
+
   return (
     <FeaturesTabWrapper>
       <DetailsSecitonWrapper>
         <PillsWrapper>
           {pillData.map(({ key, value }) => {
-            let text = "";
-
-            switch (key) {
-              case "adults":
-                text = `${value} ${key}`;
-                break;
-              case "children":
-                text = `${value} ${key}`;
-                break;
-              case "beds":
-                text = `${value} ${key}`;
-                break;
-              case "engine":
-                text = value;
-                break;
-              case "transmission":
-                text = value;
-                break;
-              case "airConditioner":
-                text = "AC";
-                break;
-              default:
-                text = key;
-            }
+            let textFunction = keyToText[key];
+            let text = textFunction ? textFunction(value) : key;
             return (
               <Pill key={key} icon={key} text={capitalizeFirstLetter(text)} />
             );
