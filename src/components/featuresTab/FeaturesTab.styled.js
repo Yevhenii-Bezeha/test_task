@@ -21,7 +21,7 @@ export const Border = styled.div`
   margin-bottom: 24px;
 `;
 
-export const DetailsIten = styled.div`
+export const DetailsItem = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;

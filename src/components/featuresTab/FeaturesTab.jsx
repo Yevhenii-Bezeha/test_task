@@ -2,7 +2,7 @@ import {
   PillsWrapper,
   DetailsSecitonWrapper,
   VehicleDetailsWrapper,
-  DetailsIten,
+  DetailsItem,
   Border,
   FeaturesTabWrapper,
 } from "./FeaturesTab.styled";
@@ -32,6 +32,24 @@ export const FeaturesTab = ({ car }) => {
     airConditioner: (value) => "AC",
   };
 
+  const carDetails = [
+    { label: "Form", value: capitalizeFirstLetter(car.form) },
+    {
+      label: "Length",
+      value: capitalizeFirstLetter(car.length.replace(/m/, " m")),
+    },
+    {
+      label: "Width",
+      value: capitalizeFirstLetter(car.width.replace(/m/, " m")),
+    },
+    {
+      label: "Height",
+      value: capitalizeFirstLetter(car.height.replace(/m/, " m")),
+    },
+    { label: "Tank", value: capitalizeFirstLetter(car.tank) },
+    { label: "Consumption", value: car.consumption },
+  ];
+
   return (
     <FeaturesTabWrapper>
       <DetailsSecitonWrapper>
@@ -47,30 +65,12 @@ export const FeaturesTab = ({ car }) => {
         <VehicleDetailsWrapper>
           <h3>Vehicle details</h3>
           <Border></Border>
-          <DetailsIten>
-            <span>Form</span>
-            <span>{capitalizeFirstLetter(car.form)}</span>
-          </DetailsIten>
-          <DetailsIten>
-            <span>Length</span>
-            <span>{capitalizeFirstLetter(car.length.replace(/m/, " m"))}</span>
-          </DetailsIten>
-          <DetailsIten>
-            <span>Width</span>
-            <span>{capitalizeFirstLetter(car.width.replace(/m/, " m"))}</span>
-          </DetailsIten>
-          <DetailsIten>
-            <span>Heigth</span>
-            <span>{capitalizeFirstLetter(car.height.replace(/m/, " m"))}</span>
-          </DetailsIten>
-          <DetailsIten>
-            <span>Tank</span>
-            <span>{capitalizeFirstLetter(car.tank)}</span>
-          </DetailsIten>
-          <DetailsIten>
-            <span>Consumption</span>
-            <span>{car.consumption}</span>
-          </DetailsIten>
+          {carDetails.map(({ label, value }) => (
+            <DetailsItem key={label}>
+              <span>{label}</span>
+              <span>{value}</span>
+            </DetailsItem>
+          ))}
         </VehicleDetailsWrapper>
       </DetailsSecitonWrapper>
       <CustomForm></CustomForm>
