@@ -34,4 +34,4 @@ Key Features:
 🔘 Phone Orders: Contact us seamlessly through our website to place orders over the phone. Our team is readily available to assist and provide guidance whenever needed.
 
 Dependencies:
-▫️ HTML ▫️ CSS ▫️ JavaScript ▫️ React/Redux Toolkit ▫️ React Router Dom ▫️ React Select ▫️ React Portals ▫️ Styled Components ▫️ Axios ▫️ React Toastify ▫️ Formik
+▫️ HTML ▫️ CSS ▫️ JavaScript ▫️ React/Redux Toolkit ▫️ React Router Dom ▫️ React Select ▫️ React Portals ▫️ Styled Components ▫️ Axios ▫️ React Toastify
