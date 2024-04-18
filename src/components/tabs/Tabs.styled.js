@@ -15,7 +15,9 @@ export const Header = styled.div`
   }
 `;
 
-export const HeaderButton = styled.div`
+export const HeaderButton = styled(({ active, ...props }) => (
+  <div {...props} />
+))`
   border-bottom: ${(props) => (props.active ? "5px solid #E44848" : "none")};
 
   button {

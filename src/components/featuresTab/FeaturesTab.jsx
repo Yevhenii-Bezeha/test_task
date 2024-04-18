@@ -52,7 +52,9 @@ export const FeaturesTab = ({ car }) => {
               default:
                 text = key;
             }
-            return <Pill icon={key} text={capitalizeFirstLetter(text)} />;
+            return (
+              <Pill key={key} icon={key} text={capitalizeFirstLetter(text)} />
+            );
           })}
         </PillsWrapper>
         <VehicleDetailsWrapper>

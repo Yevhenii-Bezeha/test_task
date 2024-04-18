@@ -64,7 +64,9 @@ export const Modal = ({ car, closeModal }) => {
           </ItemPrice>
           <ImgList>
             {car?.gallery.map((img) => {
-              return <img src={img} alt="Car" crossOrigin="anonymous" />;
+              return (
+                <img key={img} src={img} alt="Car" crossOrigin="anonymous" />
+              );
             })}
           </ImgList>
           <ItemDescrModalP>{car.description}</ItemDescrModalP>

@@ -6,8 +6,8 @@ export const ReviewsTab = ({ car }) => {
   return (
     <ReviewsTabWrapper>
       <ReviewsWrapper>
-        {car.reviews.map((review) => (
-          <Review review={review} />
+        {car.reviews.map((review, index) => (
+          <Review key={index} review={review} />
         ))}
       </ReviewsWrapper>
       <CustomForm></CustomForm>

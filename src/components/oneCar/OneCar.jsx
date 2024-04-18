@@ -113,7 +113,9 @@ export const OneCar = ({ car }) => {
               default:
                 text = key;
             }
-            return <Pill icon={key} text={capitalizeFirstLetter(text)} />;
+            return (
+              <Pill key={key} icon={key} text={capitalizeFirstLetter(text)} />
+            );
           })}
         </PillsWrapper>
         <ItemButton type="button" onClick={openModal}>

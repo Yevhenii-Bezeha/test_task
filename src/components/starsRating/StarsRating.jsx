@@ -5,8 +5,8 @@ export const StarsRating = ({ rating }) => {
   const stars = Array.from({ length: rating }, (_, i) => i + 1);
   return (
     <StarsWrapper>
-      {stars.map(() => (
-        <SvgWrapper id="icon-star-filled" />
+      {stars.map((star, index) => (
+        <SvgWrapper key={index} id="icon-star-filled" />
       ))}
     </StarsWrapper>
   );
