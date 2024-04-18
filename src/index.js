@@ -10,7 +10,7 @@ import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter basename="/test-task-car-rent">
+  <BrowserRouter basename="/">
     <Provider store={store}>
       <App />
       <GlobalStyles />
